@@ -79,8 +79,6 @@ const ArrayNumberShots = () => {
   for (let i = 1; i <= 99; i++) {
     if (i % 2 !== 0) {
       numberShots.push(i);
-    } else {
-      console.log("non ci sono numeri dispari");
     }
   }
   return numberShots;
@@ -207,14 +205,34 @@ const movies = [
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
 
+const searchOldMovies = () => {
+  let oldMovie = movies[0];
+  movies.forEach((movie) => {
+    if (parseInt(movie.Year) < parseInt(oldMovie.Year)) {
+      oldMovie = movie;
+    }
+  });
+  return oldMovie;
+};
+console.log(searchOldMovies());
+
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
-
+const totalMovies = function () {
+  return movies.length;
+};
+console.log(totalMovies());
 /* ESERCIZIO 11 (map)
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
-
+const title = function () {
+  let newArrayTitle = movies.map((movie) => {
+    return movie.Title;
+  });
+  return newArrayTitle;
+};
+console.log(title());
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
