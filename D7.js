@@ -66,10 +66,26 @@ console.log("questo è l'array dopo della funzione map", sumNumMap);
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
-
+const arrayStrings = ["EPICODE", "is", "great"];
+const ArrayNumbers = arrayStrings.map((string) => {
+  return string.length;
+});
+console.log("la lunghezza delle stringhe è di:", ArrayNumbers);
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
+const numberShots = [];
+const ArrayNumberShots = () => {
+  for (let i = 1; i <= 99; i++) {
+    if (i % 2 !== 0) {
+      numberShots.push(i);
+    } else {
+      console.log("non ci sono numeri dispari");
+    }
+  }
+  return numberShots;
+};
+console.log("i numeri dispari comprei tra 1 e 99 sono:", ArrayNumberShots());
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
